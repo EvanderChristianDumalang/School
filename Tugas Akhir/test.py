@@ -206,7 +206,7 @@ Data1.pack()
 Data2 = tk.Frame(Data1)
 Data2.pack()
 
-# Frame3
+# Frame4
 Number = tk.Frame(Window)
 Number.pack()
 
@@ -221,7 +221,7 @@ NNumber.grid(row=1,column=1,sticky="w")
 NNumberB=tk.Button(Number,text="Submit",command=lambda:[Plot1(), Plot2(), Plot3(), Plot4()])
 NNumberB.grid(row=1,column=2,sticky="w")
 
-# Frame4
+# Frame5
 Plot = tk.Frame(Window)
 Plot.pack()
 
