@@ -17,18 +17,29 @@ Window.geometry('1300x600')
 Array1 = [] #List 1
 Array2 = [] #List 2
 def Boxes():
+    Data2 = tk.Frame(Data1)
+    Data2.pack()
+    
     xx=size.get()
     Array1.clear()
     Array2.clear()
     for i in range(xx):      
-        listA = tk.Entry(Array)
+        listA = tk.Entry(Data2)
         listA.grid(row=2+i,column=0,sticky="w")
         Array1.append(listA)
-        listB = tk.Entry(Array) 
+        listB = tk.Entry(Data2) 
         listB.grid(row=2+i,column=1,sticky="w")
         Array2.append(listB)
+    
+    
+    def Clear():
+        Data2.destroy()
+        
+    ClearArray=tk.Button(Array,text="Clear",command=Clear)
+    ClearArray.grid(row=0,column=3,sticky="w")
 
-
+    
+# Plot1
 def Plot1():
     xx=size.get()
     xnew = float(xs.get())
@@ -62,6 +73,7 @@ def Plot1():
     canvas1 = FigureCanvasTkAgg(fig, master = Plot)   
     canvas1.get_tk_widget().grid(row=6,column=0,sticky="w")
 
+# Plot2
 def Plot2():
     xx=size.get()
     xnew = float(xs.get())
@@ -95,6 +107,7 @@ def Plot2():
     canvas2 = FigureCanvasTkAgg(fig, master = Plot)   
     canvas2.get_tk_widget().grid(row=6,column=1,sticky="w")
 
+# Plot3
 def Plot3():
     xx=size.get()
     xnew = float(xs.get())
@@ -128,6 +141,7 @@ def Plot3():
     canvas3 = FigureCanvasTkAgg(fig, master = Plot)   
     canvas3.get_tk_widget().grid(row=6,column=2,sticky="w")
 
+# Plot1&Plot2&Plot3
 def Plot4():
     a = []
     b = []
@@ -168,7 +182,8 @@ def Plot4():
 
     canvas4 = FigureCanvasTkAgg(fig, master = Plot)   
     canvas4.get_tk_widget().grid(row=6,column=3,sticky="w")
-  
+
+# Frame1
 Array = tk.Frame(Window)
 Array.pack()
 
@@ -183,22 +198,31 @@ ArraySize.grid(row=0,column=1,sticky="w")
 SizeofArray=tk.Button(Array,text="Submit",command=Boxes)
 SizeofArray.grid(row=0,column=2,sticky="w")
 
+# Frame2
+Data1 = tk.Frame(Window)
+Data1.pack()
+
+# Frame3
+Data2 = tk.Frame(Data1)
+Data2.pack()
+
+# Frame3
 Number = tk.Frame(Window)
 Number.pack()
 
-text2=tk.Label(Number,text="Enter New Number to Interpolate:",
-               font="Arial 10 bold")
-text2.grid(row=0,column=0,sticky="w")
+text2=tk.Label(Number,text="Enter New Number to Interpolate:",font="Arial 10 bold")
+text2.grid(row=1,column=0,sticky="w")
 
 xs=tk.DoubleVar()
 
 NNumber=tk.Entry(Number,textvariable=xs)
-NNumber.grid(row=0,column=1,sticky="w")
+NNumber.grid(row=1,column=1,sticky="w")
 
 NNumberB=tk.Button(Number,text="Submit",command=lambda:[Plot1(), Plot2(), Plot3(), Plot4()])
-NNumberB.grid(row=0,column=2,sticky="w")
+NNumberB.grid(row=1,column=2,sticky="w")
 
+# Frame4
 Plot = tk.Frame(Window)
 Plot.pack()
-  
+
 Window.mainloop()
