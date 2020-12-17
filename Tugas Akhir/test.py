@@ -213,23 +213,24 @@ def Boxes():
         listB.grid(row=2+i,column=1,sticky="w")
         Array2.append(listB)
     
-    
     def Clear():
         Data2.destroy()
         
     ClearArray=tk.Button(Array,text="Clear",command=Clear)
     ClearArray.grid(row=0,column=3,sticky="w")
 
-    
 # Plot1
 def Plot1():
     xx=size.get()
     xnew = float(xs.get())
     x = []
     y = []
-    for i in range (xx):
-        x.append(float(Array1[i].get()))
-        y.append(float(Array2[i].get()))
+    try:
+        for i in range (xx):
+            x.append(float(Array1[i].get()))
+            y.append(float(Array2[i].get()))
+    except:
+        tk.messagebox.showwarning("Warning",f"There's Something Wrong, Element of Array Empty.")
 
     start = 0
     i = 0
@@ -261,10 +262,13 @@ def Plot2():
     xnew = float(xs.get())
     x = []
     y = []
-    for i in range (xx):
-        x.append(float(Array1[i].get()))
-        y.append(float(Array2[i].get()))
-    
+    try:
+        for i in range (xx):
+            x.append(float(Array1[i].get()))
+            y.append(float(Array2[i].get()))
+    except:
+        tk.messagebox.showwarning("Warning",f"There's Something Wrong, Element of Array Empty.")
+
     start = 0
     i = 0
     while x[start] < xnew:
@@ -295,9 +299,12 @@ def Plot3():
     xnew = float(xs.get())
     x = []
     y = []
-    for i in range (xx):
-        x.append(float(Array1[i].get()))
-        y.append(float(Array2[i].get()))
+    try:
+        for i in range (xx):
+            x.append(float(Array1[i].get()))
+            y.append(float(Array2[i].get()))
+    except:
+        tk.messagebox.showwarning("Warning",f"There's Something Wrong, Element of Array Empty.")
 
     start = 0
     i = 0
@@ -331,11 +338,14 @@ def Plot4():
     y = []
     xx=size.get()
     xnew = float(xs.get())
-    for i in range (xx):
-        x.append(float(Array1[i].get()))
-        y.append(float(Array2[i].get()))
-        a.append(float(Array2[i].get()))
-        b.append(float(Array2[i].get()))
+    try:
+        for i in range (xx):
+            x.append(float(Array1[i].get()))
+            y.append(float(Array2[i].get()))
+            a.append(float(Array2[i].get()))
+            b.append(float(Array2[i].get()))
+    except:
+        tk.messagebox.showwarning("Warning",f"There's Something Wrong, Element of Array Empty.")
 
     spl1 = InterpolatedUnivariateSpline(x, y, k=1)
     spl2 = InterpolatedUnivariateSpline(x, y, k=2)
