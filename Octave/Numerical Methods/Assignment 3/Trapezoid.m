@@ -1,4 +1,4 @@
-function IntegralTrapezium = Trapezium(x0, xn, n)
+function IntegralTrapezoid = Trapezoid(x0, xn, n)
     f = @(x)0.5*exp(3/2*x+1)-3*sqrt(x);
     h = (xn - x0) / n;
     integral = f(x0) + f(xn);

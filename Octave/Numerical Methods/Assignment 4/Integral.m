@@ -7,7 +7,7 @@ b = 2;
 n = 1;
 err = 0.0001;
 
-[x, y, z] = Trapezium(a, b, n, err);
+[x, y, z] = Trapezoid(a, b, n, err);
 [xx, yy, zz] = Simpson(a, b, n, err);
 
 subplot(2,1,1);

@@ -1,4 +1,4 @@
-function [a, b, c] = Trapezium(x0, xn, n, err)
+function [a, b, c] = Trapezoid(x0, xn, n, err)
     condition = true;
     f = @(x)0.5*exp(3/2*x+1)-3*sqrt(x);
     a = [];
