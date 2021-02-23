@@ -1,5 +1,10 @@
 # pokedex
 
+# Pokedex Assignment
+- Search Bar
+- Pokemon List
+- Detail of Pokemon
+
 A new Flutter project.
 
 ## Getting Started
